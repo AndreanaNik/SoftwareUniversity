@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class Vacation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int peopleNum = Integer.parseInt(scanner.nextLine());
+        String groupName = scanner.nextLine();
+        String weekDay = scanner.nextLine();
+
+        double price = 0.0;
+
+        switch (groupName) {
+            case "Students":
+                if (weekDay.equals("Friday")) {
+                    price = peopleNum * 8.45;
+                } else if (weekDay.equals("Saturday")) {
+                    price = peopleNum * 9.8;
+                } else {
+                    price = peopleNum * 10.46;
+                }
+
+                if (peopleNum >= 30) {
+                    price = price * 0.85;
+                }
+                break;
+            case "Business":
+                if (peopleNum >= 100) {
+                    peopleNum -= 10;
+                }
+
+                if (weekDay.equals("Friday")) {
+                    price = peopleNum * 10.9;
+                } else if (weekDay.equals("Saturday")) {
+                    price = peopleNum * 15.6;
+                } else {
+                    price = peopleNum * 16.0;
+                }
+                break;
+            case "Regular":
+                if (weekDay.equals("Friday")) {
+                    price = peopleNum * 15.0;
+                } else if (weekDay.equals("Saturday")) {
+                    price = peopleNum * 20.0;
+                } else {
+                    price = peopleNum * 22.5;
+                }
+
+                if (peopleNum >= 10 && peopleNum <= 20) {
+                    price = price * 0.9;
+                }
+                break;
+        }
+        System.out.printf("Total price: %.2f", price);
+    }
+}
