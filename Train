@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Train {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int wagonNum = Integer.parseInt(scanner.nextLine());
+
+        int[] people = new int[wagonNum];
+        int peopleCount = 0;
+
+        for (int i = 0; i < people.length; i++) {
+            people[i]= Integer.parseInt(scanner.nextLine());
+            int current = people[i];
+            peopleCount += current;
+        }
+        for (int person : people) {
+            System.out.print(person + " ");
+        }
+        System.out.println();
+        System.out.println(peopleCount);
+    }
+}
