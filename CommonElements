@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class CommonElements {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] first = scanner.nextLine().split(" ");
+        String[] second = scanner.nextLine().split(" ");
+
+        boolean flag = false;
+
+        for (int i = 0; i < first.length; i++) {
+            String currentFirst = first[i];
+            for (int j = 0; j < second.length;) {
+                String currentSecond = second[j];
+                if (currentSecond.equals(currentFirst)) {
+                    System.out.println(currentSecond + " ");
+                    j++;
+                } else if (i == first.length - 1) {
+                    j++;
+                } else {
+                    break;
+                }
+            }
+        }
+    }
+}
