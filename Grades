@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Grades {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double grade = Double.parseDouble(scanner.nextLine());
+
+         gradeInWords(grade);
+    }
+
+    private static void gradeInWords(double grade) {
+        String gradeName = "Fail";
+
+        if (grade < 3.0) {
+            gradeName = "Fail";
+        } else if  (grade < 3.5) {
+            gradeName = "Poor";
+        } else if (grade < 4.5) {
+            gradeName = "Good";
+        } else if (grade < 5.5) {
+            gradeName = "Very good";
+        } else {
+            gradeName = "Excellent";
+        }
+        System.out.println(gradeName);
+    }
+}
