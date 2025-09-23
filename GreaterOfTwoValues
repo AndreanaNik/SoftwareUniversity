@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class GreaterOfTwoValues {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String type = scanner.nextLine();
+
+        switch (type) {
+            case "int":
+                int first = Integer.parseInt(scanner.nextLine());
+                int second = Integer.parseInt(scanner.nextLine());
+                getMax(first, second);
+                break;
+            case "char":
+                char firstSymbol = scanner.nextLine().charAt(0);
+                char secondSymbol = scanner.nextLine().charAt(0);
+                getMax(firstSymbol, secondSymbol);
+                break;
+            case "string":
+                String firstString = scanner.nextLine();
+                String secondString = scanner.nextLine();
+                getMax(firstString, secondString);
+                break;
+        }
+    }
+
+    private static void getMax(int first, int second) {
+            System.out.println(Math.max(first, second));
+    }
+
+    private static void getMax(char firstSymbol, char secondSymbol) {
+        if (firstSymbol > secondSymbol) {
+            System.out.println(firstSymbol);
+        } else {
+            System.out.println(secondSymbol);
+        }
+    }
+
+    private static void getMax(String firstString, String secondString) {
+        if (firstString.compareTo(secondString) >= 0) {
+            System.out.println(firstString);
+        } else {
+            System.out.println(secondString);
+        }
+    }
+}
